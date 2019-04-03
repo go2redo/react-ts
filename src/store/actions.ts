@@ -6,20 +6,14 @@ import {
   DELETE_DATA,
 } from './constants';
 
-interface IData {
-  userId: number;
-  id: number;
-  title: string;
-  body: string;
-}
-
 const getData = {
   type: GET_DATA,
 };
 
-const postData = {
+const postData = (payload: any) => ({
   type: POST_DATA,
-};
+  payload,
+});
 
 const putData = {
   type: PUT_DATA,
@@ -33,10 +27,4 @@ const deleteData = {
   type: DELETE_DATA,
 };
 
-export default {
-  getData,
-  postData,
-  putData,
-  patchData,
-  deleteData,
-};
+export { getData, postData, putData, patchData, deleteData };
